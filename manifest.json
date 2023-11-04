@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "UNCHAINED AI",
+    "version": "1.0",
+    "description": "Unchain the AI",
+    "content_scripts": [{
+        "matches": [
+            "*://bard.google.com/*",
+            "*://chat.openai.com/*",
+            "*://*.bing.com/*",
+            "*://you.com/*",
+            "*://edgeservices.bing.com/*"
+        ],
+        "js": [
+            "scripts/content.js"
+        ]
+    }],
+    "permissions": [
+        "activeTab",
+        "*://bard.google.com/*",
+        "*://chat.openai.com/*",
+        "*://*.bing.com/*",
+        "*://you.com/*",
+        "*://edgeservices.bing.com/*"
+    ]
+}
