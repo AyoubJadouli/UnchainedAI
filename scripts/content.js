@@ -45,8 +45,11 @@ function observeDOMChanges() {
     observer.observe(document, { childList: true, subtree: true });
 }
 
-// Check if the word 'bing' is present in the body's innerHTML
-if (document.body.innerHTML.includes('bing')) {
-    // Start observing DOM changes
-    observeDOMChanges();
-}
+// Wait 200ms before checking if the word 'bing' is present in the body's innerHTML
+setTimeout(() => {
+    if (document.body.innerHTML.includes('bing')) {
+        // Start observing DOM changes
+        console.log("bing detected")
+        observeDOMChanges();
+    }
+}, 200);
