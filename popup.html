@@ -4,18 +4,79 @@
 <head>
     <title>Unchained AI</title>
     <style>
-        label {
+        body {
+            background-image: url('images/UnchainedAI/facechain.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            padding: 20px;
+            width: 300px;
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h1 {
+            color: #fff;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        #injectScript {
             display: block;
+            margin: 20px 0;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .link-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .link-button:hover {
+            background-color: #45a049;
+        }
+        
+        .link-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
         }
     </style>
+    <script src="scripts/popup.js" defer></script>
 </head>
 
 <body>
     <h1>Unchained AI</h1>
-    <label>
-        <input type="checkbox" id="toggleScript"> Enable/Disable Script
-    </label>
-    <script src="scripts/popup.js"></script>
+    <button id="injectScript" style="background: linear-gradient(to right, darkblue, blue);">Unchain the AI</button>
+    <div class="link-container">
+        <a href="https://edgeservices.bing.com/edgesvc/chat?&clientscopes=chat,noheader,udsedgeshop,channelstable&darkschemeovr=1" target="_blank"><img src="https://www.bing.com/sa/simg/favicon-2x.ico" width="24" height="24">Bing</a>
+        <a href="https://you.com/search?tbm=youchat" target="_blank"><img src="https://you.com/favicon.ico" width="24" height="24">You</a>
+        <a href="https://bard.google.com/chat" target="_blank"><img src="https://www.google.com/favicon.ico" width="24" height="24">Bard</a>
+        <a href="https://poe.com/" target="_blank"><img src="https://poe.com/favicon.ico" width="24" height="24">Poe</a>
+        <a href="https://chat.openai.com/" target="_blank"><img src="https://chat.openai.com/favicon.ico" width="24" height="24">ChatGPT</a>
+    </div>
 </body>
 
 </html>

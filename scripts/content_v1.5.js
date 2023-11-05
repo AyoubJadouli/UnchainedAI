@@ -1,6 +1,6 @@
-console.log("Unchainer AI v1.6: script loaded ...");
+console.log("Unchainer AI v1.5: script loaded ...");
 
-let MAX_TOCKENS_VALUE = "32768";
+const MAX_TOCKENS_VALUE = "32768";
 
 // Function to find and update all textarea elements in the DOM
 function updateTextareas(node) {
@@ -19,24 +19,24 @@ function updateTextareas(node) {
     }
 }
 
-
 // Function to observe DOM changes and update text areas
 function observeDOMChanges() {
     const observer = new MutationObserver(() => {
         updateTextareas(document.body);
     });
 
-
     // Start observing the document with the configured parameters
     observer.observe(document, { childList: true, subtree: true });
 }
 
-
-// Wait 200ms before checking if the word 'bing' is present in the body's textContent
+// Wait 200ms before checking if the word 'bing' is present in the body's innerHTML
 setTimeout(() => {
-    if (document.body.textContent.includes('bing')) {
+    if (document.body.innerHTML.includes('bing')) {
         // Start observing DOM changes
         console.log("bing detected")
         observeDOMChanges();
+
+        // Send a message to the popup script
+        chrome.runtime.sendMessage({ bingDetected: true });
     }
 }, 200);

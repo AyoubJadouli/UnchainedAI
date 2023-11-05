@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "UNCHAINED AI",
-    "version": "1.6",
+    "version": "1.5",
     "description": "Unchain the AI",
     "background": {
         "service_worker": "scripts/background.js"
@@ -19,7 +19,7 @@
         "https://you.com/*",
         "https://edgeservices.bing.com/*"
     ],
-    "action": {
+    "browser_action": {
         "default_popup": "popup.html",
         "default_icon": {
             "16": "images/icon16.png",
@@ -32,5 +32,18 @@
         "16": "images/icon16.png",
         "48": "images/icon48.png",
         "128": "images/icon128.png"
-    }
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://bard.google.com/*",
+            "https://*.openai.com/*",
+            "https://*.bing.com/*",
+            "https://you.com/*",
+            "https://edgeservices.bing.com/*"
+        ],
+        "js": ["scripts/content.js"]
+    }],
+    "permissions": [
+        "storage"
+    ]
 }
